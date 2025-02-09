@@ -5,7 +5,6 @@ import com.dravinck.dashboardbarbearia.controller.response.ClienteResponse;
 import com.dravinck.dashboardbarbearia.entity.Cliente;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 
 @UtilityClass
 public class ClienteMapper {

@@ -1,6 +1,5 @@
 package com.dravinck.dashboardbarbearia.controller.response;
 
-import jdk.jshell.Snippet;
 import lombok.Builder;
 
 @Builder

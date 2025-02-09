@@ -39,7 +39,7 @@ public class ClienteService {
         if (optCliente.isPresent()){
             Cliente clienteFound = optCliente.get();
             clienteFound.setNome(updateCliente.getNome());
-            clienteFound.setTelefone(updateCliente.getTelefone());;
+            clienteFound.setTelefone(updateCliente.getTelefone());
             return Optional.of(Repository.save(clienteFound));
         }
         return Optional.empty();
