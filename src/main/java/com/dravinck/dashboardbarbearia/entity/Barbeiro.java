@@ -3,6 +3,8 @@ package com.dravinck.dashboardbarbearia.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -18,4 +20,6 @@ public class Barbeiro {
 
     private String nome;
 
+    @OneToMany(mappedBy = "barbeiro", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cliente> clientes;
 }

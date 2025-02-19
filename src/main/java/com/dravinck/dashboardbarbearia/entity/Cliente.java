@@ -4,6 +4,8 @@ package com.dravinck.dashboardbarbearia.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,5 +25,9 @@ public class Cliente {
 
     @Column(nullable = false)
     String telefone;
+
+    @ManyToOne
+    @JoinColumn(name = "barbeiro_id", nullable = false)
+    private Barbeiro barbeiro;
 
 }
