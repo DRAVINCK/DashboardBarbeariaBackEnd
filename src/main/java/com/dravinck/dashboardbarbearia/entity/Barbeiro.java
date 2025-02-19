@@ -20,6 +20,7 @@ public class Barbeiro {
 
     private String nome;
 
-    @OneToMany(mappedBy = "barbeiro", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Cliente> clientes;
+    @OneToMany(mappedBy = "barbeiro")
+    private List<Agendamento> agendamentos;
+
 }
