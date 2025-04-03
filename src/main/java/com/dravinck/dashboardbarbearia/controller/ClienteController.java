@@ -25,11 +25,6 @@ public class ClienteController {
 
     private final ClienteService clienteService;
 
-
-    @Operation(summary = "Cadastrar um filme",description = "Cadastra um filme no banco de dados",
-            security = @SecurityRequirement(name = "bearerAuth"))
-    @ApiResponse(responseCode = "201", description = "Filme cadastrado com sucesso",
-            content = @Content(schema = @Schema(implementation = ClienteResponse.class)))
     @PostMapping
     public ResponseEntity<ClienteResponse> save(@Valid @RequestBody ClienteRequest cliente) {
         Cliente save = clienteService.save(ClienteMapper.toCliente(cliente));

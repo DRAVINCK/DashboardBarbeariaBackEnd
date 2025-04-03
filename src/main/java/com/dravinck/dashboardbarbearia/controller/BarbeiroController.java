@@ -33,6 +33,13 @@ public class BarbeiroController {
                 .toList());
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<BarbeiroResponse> findById(@PathVariable Long id){
+        return service.findById(id)
+                .map(barbeiro -> ResponseEntity.ok(BarbeiroMapper.toBabeiroResponse(barbeiro)))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PutMapping("{id}")
     public ResponseEntity<BarbeiroResponse> update(@PathVariable Long id, @Valid @RequestBody BarbeiroRequest barbeiro){
         service.update(id, BarbeiroMapper.toBabeiro(barbeiro));

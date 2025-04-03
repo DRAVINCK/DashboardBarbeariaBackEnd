@@ -22,6 +22,10 @@ public class BarbeiroService {
         return Repository.save(barbeiro);
     }
 
+    public Optional<Barbeiro> findById(Long id){
+        return Repository.findById(id);
+    }
+
     public void update(Long id, Barbeiro updateBarbeiro){
         Optional<Barbeiro> optBarbeiro = Repository.findById(id);
         if (optBarbeiro.isPresent()){
